@@ -1,123 +1,85 @@
-# Easely.js
 
-**Easely.js** is a lightweight, declarative GSAP wrapper designed for creative frontend developers. Transform static HTML into a high-end, "Awwwards-level" experience using simple data attributes. No complex JavaScript required.
+# 🚀 Welcome to Easely.js (Beta)
+**Easely.js** is a simple tool designed to help you add professional animations to your website without writing complex JavaScript. If you can write HTML, you can animate like a pro.
 
----
-
-## ✨ Core Features
-
-* **Declarative Syntax:** Control animations directly in your HTML.
-* **Scroll-Triggered:** High-performance scroll detection powered by GSAP.
-* **Liquid Parallax:** Smooth "scrub" effects that tie motion to the scrollbar.
-* **Zero Layout Thrash:** Built-in GPU optimization and memory hygiene.
-* **Fresher Friendly:** Designed to be used without writing a single line of GSAP logic.
+> **Note:** This library is currently in active development. It is perfect for personal portfolios and freelance projects. We are working hard to make it 100% production-ready!
 
 ---
 
-## 🛠️ Quick Start
-
-### 1. Installation
-
-**Using CDN (Easiest Way):**
-Add these to your HTML just before the closing `</body>` tag:
+## 🛠️ Step 1: Add it to your site
+Copy and paste these lines into your HTML file just before the closing `</body>` tag.
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@pstarz7/easely@1.0.4/dist/easely.umd.js"></script>
-```
 
-**Using NPM:**
-
-```bash
-npm install @pstarz7/easely
-```
-
-### 2. Initialization
-
-Initialize the engine in your main script file:
-
-```javascript
-window.addEventListener('load', () => {
-    Easely.init({
-        duration: 1.5,
-        ease: "power4.out"
-    });
-});
-```
-
-### 3. Usage
-
-Simply add the `data-ez` attribute to any element:
-
-```html
-<h1 data-ez="blur-up">Hello World</h1>
-
-<section data-ez="slide-up" data-ez-scroll="true">
-    I animate when you see me.
-</section>
+<script>
+  // Initialize the engine
+  Easely.init();
+</script>
 ```
 
 ---
 
-## 📖 Attributes Reference
+## 🎨 Step 2: Pick your "Movement"
+Just add the `data-ez` attribute to any tag (like `<h1>`, `<div>`, or `<img>`).
+
+| Attribute | What it does |
+| :--- | :--- |
+| `data-ez="fade"` | Smoothly fades in from 0% to 100% opacity. |
+| `data-ez="blur-up"` | Starts blurry and clear up (Premium aesthetic). |
+| `data-ez="slide-up"` | Slides up from the bottom into position. |
+| `data-ez="slide-down"` | Slides down from the top into position. |
+| `data-ez="zoom-in"` | Scales up from a small size to normal. |
+
+---
+
+## ⚙️ Step 3: All Attributes (The Control Panel)
+Want to fine-tune your motion? Add these extra attributes to your HTML tags.
 
 | Attribute | Value | Description |
 | :--- | :--- | :--- |
-| `data-ez` | `fade`, `blur-up`, `slide-up`, `slide-down`, `zoom-in` | Sets the animation preset type. |
-| `data-ez-duration` | `number` (e.g., `2`) | Speed of the animation in seconds. |
-| `data-ez-delay` | `number` (e.g., `0.5`) | Delay before the animation starts. |
-| `data-ez-scroll` | `true` / `false` | Enables scroll-triggered animation. |
-| `data-ez-start` | `string` (e.g., `top 80%`) | Sets the scroll trigger position. |
-| `data-ez-scrub` | `true` / `number` | Locks animation to scrollbar (Parallax). |
-| `data-ez-stagger` | `number` (e.g., `0.2`) | Delays between children animations. |
-| `data-ez-once` | `true` / `false` | If false, animation repeats on scroll back. |
+| `data-ez-duration` | `number` | How many seconds the animation takes (e.g., `2`). |
+| `data-ez-delay` | `number` | How many seconds to wait before starting (e.g., `0.5`). |
+| `data-ez-scroll` | `true` | Element only animates when you scroll down to it. |
+| `data-ez-start` | `string` | Where on the screen to trigger (e.g., `top 80%`). |
+| `data-ez-scrub` | `number` | Links animation to your scroll speed (Smooth parallax). |
+| `data-ez-stagger` | `number` | Animates children one-by-one (e.g., `0.2`). |
+| `data-ez-once` | `false` | Set to `false` if you want it to repeat every time you scroll. |
 
 ---
 
-## 📂 Project Structure
+## 🩺 Troubleshooting & Bug Fixes
+If things don't look right, try these simple solutions:
 
-The library logic is organized into clean, modular files:
-
-```plaintext
-src/
-├── core/
-│   ├── config.js    # Default settings & prefixes
-│   ├── engine.js    # DOM Scanner & Scanner Logic
-│   └── registry.js  # Memory management & Tween tracking
-└── modules/
-    ├── animator.js  # GSAP Tween execution
-    ├── parser.js    # HTML Attribute Reader
-    └── scroll.js    # ScrollTrigger orchestration
-```
-
----
-
-## 🎨 Best Practices
-
-- **The Safety Layer:** To avoid "flashing" before the JS loads, add this to your CSS:
+**1. The "Flashing" Problem**
+* **Issue:** Elements appear for a split second before the animation starts.
+* **Fix:** Add this CSS to your stylesheet:
     ```css
-    [data-ez] { opacity: 0; visibility: hidden; }
-    .ez-ready [data-ez] { visibility: visible; }
+    [data-ez] { opacity: 0; }
     ```
-- **Performance:** For complex pages, use `data-ez-scroll="true"` to ensure elements only animate when they are in view.
-- **Refined Motion:** Use `data-ez-duration="2"` for headings to give them a premium, cinematic feel.
+
+**2. Animation Starts Too Early**
+* **Issue:** The element animates before you can see it.
+* **Fix:** Use `data-ez-start="top 60%"` to move the trigger point higher on the screen.
+
+**3. Blank Screen on Load**
+* **Issue:** Nothing appears.
+* **Fix:** Check your console (F12). Make sure you included the GSAP scripts *before* the Easely script.
 
 ---
 
-## 📜 License
+## 📩 Report a Bug / Give Feedback
+Since this library is in the **development phase**, your feedback is very important! 
 
-MIT © **Papu Badatya**
+If you find a bug, have an idea for a new animation, or want to use this in a big production project, please reach out:
+
+* **Email:** [Papubadatya355@gmail.com]
+* **Portfolio:** [https://pstarz.vercel.app/]
+
+**Thank you for using Easely.js. Let's make the web move together! ✨**
 
 ---
-
-## 🚀 To-Do List
-
-- [x] Production Engine v1.0.4
-- [x] NPM Package Release
-- [ ] Add Custom Timeline Support
-- [ ] Built-in Markers for Debugging (Coming Soon)
-
-**Happy Building! ✨**
-```
+**What's next?** I am currently working on adding more advanced features like **Custom Timelines** and **Path Animations** to make it even easier for beginners to build world-class websites.
