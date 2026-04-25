@@ -108,7 +108,7 @@ src/
 
 ## 📜 License
 
-MIT © **Dipu Badatya**
+MIT © **Papu Badatya**
 
 ---
 
