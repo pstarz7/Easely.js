@@ -1,27 +1,32 @@
-Here's the same content as plain text (no markdown formatting):
+# Easely.js
 
-Easely.js
+**Easely.js** is a lightweight, declarative GSAP wrapper designed for creative frontend developers. Transform static HTML into a high-end, "Awwwards-level" experience using simple data attributes. No complex JavaScript required.
 
-Easely.js is a lightweight, declarative GSAP wrapper designed for creative frontend developers. Transform static HTML into a high-end, "Awwwards-level" experience using simple data attributes. No complex JavaScript required.
+---
 
-Core Features
+## ✨ Core Features
 
-- Declarative Syntax: Control animations directly in your HTML.
-- Scroll-Triggered: High-performance scroll detection powered by GSAP.
-- Liquid Parallax: Smooth "scrub" effects that tie motion to the scrollbar.
-- Zero Layout Thrash: Built-in GPU optimization and memory hygiene.
-- Fresher Friendly: Designed to be used without writing a single line of GSAP logic.
+* **Declarative Syntax:** Control animations directly in your HTML.
+* **Scroll-Triggered:** High-performance scroll detection powered by GSAP.
+* **Liquid Parallax:** Smooth "scrub" effects that tie motion to the scrollbar.
+* **Zero Layout Thrash:** Built-in GPU optimization and memory hygiene.
+* **Fresher Friendly:** Designed to be used without writing a single line of GSAP logic.
 
-Quick Start
+---
 
-1. Installation
+## 🛠️ Quick Start
 
-Using CDN (Easiest Way):
-Add these to your HTML just before the closing </body> tag:
+### 1. Installation
 
+**Using CDN (Easiest Way):**
+Add these to your HTML just before the closing `</body>` tag:
+
+```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@pstarz7/easely@1.0.4/dist/easely.umd.js"></script>
+```
 
 **Using NPM:**
 
