@@ -13,8 +13,7 @@ Copy and paste these lines into your HTML file just before the closing `</body>`
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/@pstarz7/easely@1.0.4/dist/easely.umd.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@pstarz7/easely@1.0.5/dist/easely.umd.js"></script>
 <script>
   // Initialize the engine
   Easely.init();
