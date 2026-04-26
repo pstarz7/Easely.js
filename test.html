@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Botanical | Full Production Fix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Plus+Jakarta+Sans:wght@200;400;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --cream: #F9F7F2; --charcoal: #1A1A1A; }
+        body { background: var(--cream); color: var(--charcoal); font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; margin: 0; padding: 0; }
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        
+        /* THE ULTIMATE MOTION FIX */
+        [data-ez] { opacity: 0; visibility: hidden; }
+        .ez-ready [data-ez] { visibility: visible; opacity: 1 !important; transition: visibility 0s, opacity 0.5s ease; }
+
+        .img-container { overflow: hidden; border-radius: 2px; position: relative; }
+        .img-container img { transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .img-container:hover img { transform: scale(1.05); }
+
+        .btn-flower { border: 1px solid var(--charcoal); padding: 15px 35px; text-transform: uppercase; font-size: 10px; letter-spacing: 3px; font-weight: 800; transition: all 0.3s ease; cursor: pointer; background: transparent; }
+        .btn-flower:hover { background: var(--charcoal); color: var(--cream); }
+        
+        /* Custom UI Decorations */
+        .floral-divider { width: 1px; height: 100px; background: var(--charcoal); opacity: 0.2; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+    <section class="relative h-screen w-full flex flex-col justify-center items-center bg-[#F9F7F2] overflow-hidden">
+        <nav class="fixed top-0 left-0 w-full p-10 flex justify-between items-center z-[999]" data-ez="fade" data-ez-duration="1.5">
+            <span class="font-bold tracking-[0.3em] text-xs">EST. 2026</span>
+            <h2 class="text-xl font-serif italic text-black">Bloom</h2>
+            <span class="font-bold tracking-[0.3em] text-xs cursor-pointer">MENU</span>
+        </nav>
+
+        <div class="text-center z-10 relative">
+            <h1 class="font-serif text-[12vw] md:text-[8vw] leading-[0.9] mb-6 italic" data-ez="blur-up" data-ez-duration="2.5">
+                Art of the <br> 
+                <span class="not-italic font-sans font-extralight tracking-tighter">Wildflower</span>
+            </h1>
+            <p class="max-w-md mx-auto text-sm tracking-widest uppercase mb-10 opacity-70" 
+               data-ez="slide-up" data-ez-duration="1.5" data-ez-delay="0.6">
+                Curated botanical arrangements for the modern soul.
+            </p>
+            <div data-ez="zoom-in" data-ez-duration="1" data-ez-delay="1">
+                <button class="btn-flower">Shop Collection</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-10 bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10" data-ez="slide-up" data-ez-stagger="0.2" data-ez-scroll="true" data-ez-start="top 70%">
+            <div class="space-y-4">
+                <div class="h-[450px] img-container"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600" class="w-full h-full object-cover"></div>
+                <h3 class="font-serif text-2xl italic">Morning Dew</h3>
+                <p class="text-xs opacity-50 tracking-widest uppercase">$45.00 — $120.00</p>
+            </div>
+            <div class="space-y-4 md:mt-20">
+                <div class="h-[450px] img-container"><img src="https://images.unsplash.com/photo-1507290439931-a861b5a38200?w=600" class="w-full h-full object-cover"></div>
+                <h3 class="font-serif text-2xl italic">Golden Hour</h3>
+                <p class="text-xs opacity-50 tracking-widest uppercase">$65.00 — $180.00</p>
+            </div>
+            <div class="space-y-4">
+                <div class="h-[450px] img-container"><img src="https://i.pinimg.com/736x/c2/5b/e2/c25be23386540fa00235fb7891443ca1.jpg" class="w-full h-full object-cover"></div>
+                <h3 class="font-serif text-2xl italic">Midnight Bloom</h3>
+                <p class="text-xs opacity-50 tracking-widest uppercase">$55.00 — $140.00</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-10 bg-[#F9F7F2]">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="img-container h-[600px]" data-ez="slide-right" data-ez-scroll="true" data-ez-start="top 60%">
+                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800" class="w-full h-full object-cover" alt="garden">
+            </div>
+            <div class="space-y-8" data-ez="slide-up" data-ez-scroll="true" data-ez-start="top 70%">
+                <h2 class="font-serif text-5xl md:text-6xl italic leading-tight">Grown with <br> Patience & Poetry.</h2>
+                <p class="opacity-60 leading-relaxed">We believe every flower tells a unique story. Our studio focuses on sustainable sourcing and organic textures that bring the untamed beauty of nature directly into your sanctuary.</p>
+                <div class="floral-divider !mx-0"></div>
+                <p class="font-bold tracking-widest text-xs uppercase">Founder — Elara Vance</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="h-screen relative overflow-hidden flex items-center justify-center bg-white">
+        <div class="absolute inset-0 z-0" data-ez="slide-down" data-ez-scroll="true" data-ez-scrub="1.5">
+            <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?w=1600" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="z-10 text-center">
+            <h2 class="font-serif text-[10vw] italic text-charcoal" data-ez="zoom-in" data-ez-scroll="true" data-ez-start="top 35%">The Essence</h2>
+            <p class="uppercase tracking-[1em] text-[10px] font-bold" data-ez="fade" data-ez-scroll="true">Wildly Rooted</p>
+        </div>
+    </section>
+
+    <section class="py-32 px-10 bg-[#F9F7F2]">
+        <div class="text-center mb-24" data-ez="fade" data-ez-scroll="true">
+            <h2 class="font-serif text-4xl italic">Our Offerings</h2>
+        </div>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16" data-ez="slide-up" data-ez-stagger="0.2" data-ez-scroll="true" data-ez-start="top 80%">
+            <div class="text-center space-y-4">
+                <div class="text-xs font-black border-b border-black pb-2 mb-4">01 / WEDDINGS</div>
+                <p class="opacity-50 text-sm">Bespoke bridal bouquets and grand floral installations for your special day.</p>
+            </div>
+            <div class="text-center space-y-4">
+                <div class="text-xs font-black border-b border-black pb-2 mb-4">02 / WORKSHOPS</div>
+                <p class="opacity-50 text-sm">Join us for seasonal classes and learn the delicate art of botanical arrangement.</p>
+            </div>
+            <div class="text-center space-y-4">
+                <div class="text-xs font-black border-b border-black pb-2 mb-4">03 / SUBSCRIPTIONS</div>
+                <p class="opacity-50 text-sm">Fresh, seasonal wildflower arrangements delivered to your door every week.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 text-center bg-white">
+        <div class="max-w-2xl mx-auto" data-ez="slide-up" data-ez-scroll="true" data-ez-start="top 60%" data-ez-markers="false">
+            <h2 class="text-4xl mb-10 font-light font-serif italic">Bring nature into <br> your living space.</h2>
+            <button class="btn-flower">Book an Event</button>
+        </div>
+    </section>
+
+    <footer class="p-20 text-center border-t border-black/5 opacity-30 text-[10px] uppercase tracking-[0.5em] bg-[#F9F7F2]">
+        © 2026 Bloom Studio — Built with Easely.js
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@pstarz7/easely@1.0.5/dist/easely.umd.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            if (window.Easely) {
+                Easely.init({
+                    duration: 1.8,
+                    ease: "power4.out"
+                });
+                document.body.classList.add('ez-ready');
+                setTimeout(() => {
+                    if(window.ScrollTrigger) window.ScrollTrigger.refresh();
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easely.js | Animation Library for Creative Developers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #FDFCFB; --text: #1A1A1A; --accent: #FF6B6B; --code-bg: #1A1A1A; }
+        body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* --- 100% VISIBILITY & NO-FLASH FIX --- */
+        [data-ez] { opacity: 0; visibility: hidden; }
+        
+        /* Once initialized, switch visibility and force opacity to stay at 1 */
+        .ez-ready [data-ez] { 
+            visibility: visible; 
+            opacity: 1 !important; 
+            transition: visibility 0s, opacity 0.5s ease;
+        }
+
+        /* UI Styling */
+        .brutalist-card { background: white; border: 2px solid #000; transition: all 0.3s ease; }
+        .brutalist-card:hover { transform: translate(-4px, -4px); shadow: 8px 8px 0px var(--accent); }
+        .btn-black { background: #000; color: #fff; padding: 14px 32px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; box-shadow: 4px 4px 0px var(--accent); }
+        .btn-black:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--accent); }
+        
+        pre { background: var(--code-bg); color: #4ade80; padding: 24px; border-radius: 4px; overflow-x: auto; border-left: 4px solid var(--accent); font-size: 0.9rem; }
+        .attr-table td, .attr-table th { border-bottom: 1px solid rgba(0,0,0,0.05); padding: 12px; text-align: left; }
+    </style>
+</head>
+<body>
+
+<section class="min-h-screen flex flex-col justify-center items-center px-6 text-center relative bg-[#F9F7F2] overflow-hidden">
+    <div class="absolute top-10 left-10 text-[10px] font-black tracking-[0.4em] uppercase" data-ez="fade">
+        Beta v1.0.5 — Active Development
+    </div>
+
+    <div class="absolute top-10 right-10" data-ez="fade" data-ez-delay="0.5">
+        <a href="https://github.com/pstarz7/Easely.js" target="_blank" class="flex items-center gap-2 hover:opacity-60 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            <span class="text-[10px] font-black tracking-widest uppercase">Documentation</span>
+        </a>
+    </div>
+    
+    <div class="max-w-4xl">
+        <h1 class="font-heading text-6xl md:text-9xl leading-[0.85] tracking-tighter mb-8" data-ez="blur-up" data-ez-duration="2.5">
+            ANIMATE GSAP <br> <span class="text-[#FF6B6B]">EASELY.JS</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl opacity-60 mb-10 max-w-2xl mx-auto" data-ez="slide-up" data-ez-delay="0.6">
+            Easely.js is a simple tool designed to help you add professional animations to your website without writing complex JavaScript.
+        </p>
+        
+        <div class="flex flex-wrap gap-4 justify-center" data-ez="zoom-in" data-ez-delay="1.2">
+            <a href="#install" class="btn-black">Get Started</a>
+            <a href="https://pstarz.vercel.app/" target="_blank" class="border-2 border-black px-8 py-3 uppercase font-bold text-sm tracking-widest hover:bg-black hover:text-white transition">My Portfolio</a>
+        </div>
+    </div>
+
+    <div class="mt-20 p-4 border border-black/5 rounded-full text-[10px] font-bold uppercase tracking-widest animate-bounce" data-ez="fade" data-ez-delay="2">
+        Scroll to Learn
+    </div>
+</section>
+    <section id="install" class="py-32 px-6 max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+            <div class="md:w-1/2" data-ez="slide-right" data-ez-scroll="true">
+                <span class="text-[#FF6B6B] font-black text-xs tracking-widest uppercase">Step 01</span>
+                <h2 class="font-heading text-5xl mt-4 mb-6">🛠️ Add it to your site</h2>
+                <p class="opacity-60 mb-6">Copy and paste these lines into your HTML file just before the closing <code>&lt;/body&gt;</code> tag.</p>
+                <blockquote class="border-l-4 border-black pl-4 italic text-sm opacity-50">"Perfect for personal portfolios and freelance projects."</blockquote>
+            </div>
+<div class="md:w-1/2 w-full" data-ez="slide-up" data-ez-scroll="true">
+    <pre><code>&lt;!-- 1. Load GSAP & ScrollTrigger (Required) --&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- 2. Load Easely.js v1.0.5 --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@pstarz7/easely@1.0.5/dist/easely.umd.js"&gt;&lt;/script&gt;
+
+&lt;!-- 3. Initialize the Magic --&gt;
+&lt;script&gt;
+  window.addEventListener('load', () => {
+    Easely.init({
+      duration: 1.5,
+      ease: "power4.out"
+    });
+  });
+&lt;/script&gt;</code></pre>
+</div>
+        </div>
+    </section>
+
+<section class="py-32 px-6 bg-white border-y border-black/5">
+    <div class="max-w-5xl mx-auto text-center mb-20">
+        <span class="text-[#FF6B6B] font-black text-xs tracking-widest uppercase">The Presets</span>
+        <h2 class="font-heading text-5xl mt-4 mb-4">Pick your "Movement"</h2>
+        <p class="opacity-60">Live demonstration of looping presets.</p>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="group brutalist-card p-10 hover:shadow-[8px_8px_0px_#000]" 
+             data-ez="fade" data-ez-repeat="-1" data-ez-yoyo="true" data-ez-duration="1.5">
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-[#FF6B6B]">fade</h3>
+            <p class="text-sm opacity-60">Smoothly fades in from 0% to 100% opacity.</p>
+        </div>
+
+        <div class="group brutalist-card p-10 hover:shadow-[8px_8px_0px_#FF6B6B]" 
+             data-ez="blur-up" data-ez-repeat="-1" data-ez-yoyo="true" data-ez-duration="2">
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-[#FF6B6B]">blur-up</h3>
+            <p class="text-sm opacity-60">Starts blurry and clear up (Premium aesthetic).</p>
+        </div>
+
+        <div class="group brutalist-card p-10 hover:shadow-[8px_8px_0px_#000]" 
+             data-ez="slide-up" data-ez-repeat="-1" data-ez-yoyo="true" data-ez-duration="1.2">
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-[#FF6B6B]">slide-up</h3>
+            <p class="text-sm opacity-60">Slides up from the bottom into position.</p>
+        </div>
+
+        <div class="group brutalist-card p-10 hover:shadow-[8px_8px_0px_#FF6B6B]" 
+             data-ez="slide-down" data-ez-repeat="-1" data-ez-yoyo="true" data-ez-duration="1.2">
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-[#FF6B6B]">slide-down</h3>
+            <p class="text-sm opacity-60">Slides down from the top into position.</p>
+        </div>
+
+        <div class="group brutalist-card p-10 hover:shadow-[8px_8px_0px_#000]" 
+             data-ez="zoom-in" data-ez-repeat="-1" data-ez-yoyo="true" data-ez-duration="1">
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-[#FF6B6B]">zoom-in</h3>
+            <p class="text-sm opacity-60">Scales up from a small size to normal.</p>
+        </div>
+    </div>
+</section>
+
+    <section class="py-32 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-20" data-ez="fade" data-ez-scroll="true">
+            <h2 class="font-heading text-5xl mb-4">The Control Panel</h2>
+            <p class="opacity-60 text-lg">Fine-tune your motion with these attributes.</p>
+        </div>
+
+        <div class="overflow-x-auto brutalist-card" data-ez="slide-up" data-ez-scroll="true">
+            <table class="w-full attr-table">
+                <thead class="bg-black text-white">
+                    <tr>
+                        <th class="p-4 uppercase text-xs tracking-widest">Attribute</th>
+                        <th class="p-4 uppercase text-xs tracking-widest">Value</th>
+                        <th class="p-4 uppercase text-xs tracking-widest">Description</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+                    <tr><td><code>data-ez-duration</code></td><td>number</td><td>Animation length in seconds (e.g. 2)</td></tr>
+                    <tr><td><code>data-ez-delay</code></td><td>number</td><td>Wait time before start (e.g. 0.5)</td></tr>
+                    <tr><td><code>data-ez-scroll</code></td><td>true</td><td>Animate only when visible in viewport</td></tr>
+                    <tr><td><code>data-ez-start</code></td><td>string</td><td>Trigger position (e.g. top 80%)</td></tr>
+                    <tr><td><code>data-ez-scrub</code></td><td>number</td><td>Tie motion to scroll speed (Parallax)</td></tr>
+                    <tr><td><code>data-ez-stagger</code></td><td>number</td><td>Delay between child elements</td></tr>
+                    <tr><td><code>data-ez-once</code></td><td>false</td><td>Repeat animation every time you scroll</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-[#1A1A1A] text-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-heading text-5xl mb-16 text-center" data-ez="fade" data-ez-scroll="true">Troubleshooting</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="p-8 border border-white/20" data-ez="slide-right" data-ez-scroll="true">
+                    <h4 class="font-bold text-accent mb-4 uppercase tracking-widest">1. The Flashing Problem</h4>
+                    <p class="text-sm opacity-60 mb-6">Add this to your CSS to prevent elements showing before JS loads:</p>
+                    <pre class="!bg-black !text-[#4ade80]"><code>[data-ez] { opacity: 0; }</code></pre>
+                </div>
+                <div class="p-8 border border-white/20" data-ez="slide-left" data-ez-scroll="true">
+                    <h4 class="font-bold text-accent mb-4 uppercase tracking-widest">2. Early Triggering</h4>
+                    <p class="text-sm opacity-60 mb-6">Use custom start positions to move the trigger point higher:</p>
+                    <pre class="!bg-black !text-[#4ade80]"><code>data-ez-start="top 60%"</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-40 px-6 text-center">
+        <div class="max-w-2xl mx-auto" data-ez="zoom-in" data-ez-scroll="true">
+            <h2 class="font-heading text-5xl md:text-7xl mb-8 leading-tight">Let's make the web <br> move together.</h2>
+            <p class="opacity-50 mb-12">Found a bug or have an idea? Reach out directly.</p>
+            
+            <div class="flex flex-wrap justify-center gap-8 font-bold text-xs uppercase tracking-widest">
+                <a href="mailto:Papubadatya355@gmail.com" class="hover:text-[#FF6B6B] transition">Email</a>
+                <a href="https://pstarz.vercel.app/" target="_blank" class="hover:text-[#FF6B6B] transition">Portfolio</a>
+            </div>
+            
+            <div class="mt-32 opacity-20 text-[10px] uppercase tracking-[1em]">© 2026 EASELY.JS BY PSTARZ lab </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@pstarz7/easely@1.0.5/dist/easely.umd.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            if (window.Easely) {
+                // Initialize the engine
+                Easely.init({
+                    duration: 1.8,
+                    ease: "power4.out"
+                });
+
+                // REVEAL LOCK: Switches visibility and allows GSAP to take over
+                document.body.classList.add('ez-ready');
+
+                // Recalculate ScrollTrigger positions
+                setTimeout(() => {
+                    if(window.ScrollTrigger) window.ScrollTrigger.refresh();
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
